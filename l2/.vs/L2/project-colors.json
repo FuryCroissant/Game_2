@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "17fa38a5-0d4a-48f2-80ab-b7d1e2d51f32": {
+      "ProjectGuid": "17fa38a5-0d4a-48f2-80ab-b7d1e2d51f32",
+      "DisplayName": "Help",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "d3a03109-6bcf-45f5-a276-8c78ea956a54": {
+      "ProjectGuid": "d3a03109-6bcf-45f5-a276-8c78ea956a54",
+      "DisplayName": "Server",
+      "ColorIndex": 1
+    },
+    "703d7d33-f4ea-4e7e-bd65-a7af53c897cc": {
+      "ProjectGuid": "703d7d33-f4ea-4e7e-bd65-a7af53c897cc",
+      "DisplayName": "Client",
+      "ColorIndex": 2
+    },
+    "497e1c1c-8ebd-4cb7-9119-7ebd3cd306fc": {
+      "ProjectGuid": "497e1c1c-8ebd-4cb7-9119-7ebd3cd306fc",
+      "DisplayName": "Lib",
+      "ColorIndex": 3
+    },
+    "57d3573d-4eb6-4c14-a3a0-bdfb8da0f7ec": {
+      "ProjectGuid": "57d3573d-4eb6-4c14-a3a0-bdfb8da0f7ec",
+      "DisplayName": "Client",
+      "ColorIndex": 4
+    },
+    "5347d9ed-cc56-42dc-aacb-586cccd569a8": {
+      "ProjectGuid": "5347d9ed-cc56-42dc-aacb-586cccd569a8",
+      "DisplayName": "Client2",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}
