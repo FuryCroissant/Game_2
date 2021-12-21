@@ -23,7 +23,7 @@ class Server
         }
         catch (Exception)
         {
-            Console.WriteLine("Unknown error occured");
+            Console.WriteLine("Unknown error.");
             throw;
         }
         finally
@@ -50,7 +50,7 @@ class Server
 
         while (continueGame)
         {
-            if (isCreatingSequence)
+            if (isCreatingSequence)//если загадывает сервер
             {
                 Console.Write(ConstantValues.Request);
                 string? seq = Console.ReadLine();
@@ -60,12 +60,12 @@ class Server
                     Console.WriteLine(ConstantValues.Rewrite);
                     continue;
                 }
-
+                //отправляем свое
                 Message message = new() { Sequence = seq.ToLower() };
                 string messageJson = JsonSerializer.Serialize(message);
                 Helpers.WriteToBuffer(messageJson, buffer);
                 await stream.WriteAsync(buffer, 0, buffer.Length);
-
+                //получаем чужое
                 Console.WriteLine(ConstantValues.WaitResult);
                 await stream.ReadAsync(buffer, 0, buffer.Length);
                 messageJson = Helpers.ReadFromBuffer(buffer);
@@ -87,10 +87,11 @@ class Server
                     isCreatingSequence = false;
                 }
             }
-            else
+            else//загадывают с клиента
             {
                 Console.WriteLine(ConstantValues.WaitSequence);//ожидание ввода от другого
 
+                //получение
                 await stream.ReadAsync(buffer, 0, buffer.Length);
                 string messageJson = Helpers.ReadFromBuffer(buffer);
                 string? sequence = JsonSerializer.Deserialize<Message>(messageJson)?.Sequence;
@@ -106,7 +107,7 @@ class Server
                 string? recreatedSequence = Console.ReadLine();
                 Message message;
 
-                if (recreatedSequence == null || recreatedSequence.ToLower() != sequence)
+                if (recreatedSequence == null || recreatedSequence.ToLower() != sequence)//проигрыш сервера
                 {
                     Console.WriteLine(ConstantValues.Defeat);
                     message = new() { Signal = Signal.Lost };
@@ -116,7 +117,7 @@ class Server
                     continueGame = false;
                     continue;
                 }
-
+                //выигрыш сервера смена ролей
                 Console.WriteLine(ConstantValues.RightType);
                 message = new() { Signal = Signal.GotItRight };
                 messageJson = JsonSerializer.Serialize(message);
