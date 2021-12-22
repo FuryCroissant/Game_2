@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Server\\Server.csproj": {}
+    "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Lib\\Lib.csproj": {
+    "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Lib\\Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Lib\\Lib.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Lib\\Lib.csproj",
         "projectName": "Lib",
-        "projectPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Lib\\Lib.csproj",
+        "projectPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Lib\\Lib.csproj",
         "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Lib\\obj\\",
+        "outputPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Lib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Server\\Server.csproj": {
+    "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Server\\obj\\",
+        "outputPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Lib\\Lib.csproj": {
-                "projectPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Lib\\Lib.csproj"
+              "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Lib\\Lib.csproj": {
+                "projectPath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Lib\\Lib.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v1pL1c38GwSScVOploxkgaj7iwV1juMrkLgL2r4sszB+S53+hA8Qo3myOTuEm4jn/CUJ9VN1Y0lZi37zJ5896g==",
+  "dgSpecHash": "ENCuYDXGHrcH8+F8d3YjPGz8V5+7os3x+mkA3CbgHZ+z3qV7COy8uQU2EvFGTYvyr9cK2H0cMSXvt3TrjSKwHw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\L2\\Server\\Server.csproj",
+  "projectFilePath": "C:\\Users\\maria\\source\\repos\\NewRepo2\\l2\\Server\\Server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
