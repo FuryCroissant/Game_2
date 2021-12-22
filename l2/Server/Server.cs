@@ -46,11 +46,11 @@ class Server
         byte[] buffer = new byte[1024];
 
         bool continueGame = true;
-        bool isCreatingSequence = true;
+        bool SeqCreated = true;
 
         while (continueGame)
         {
-            if (isCreatingSequence)//если загадывает сервер
+            if (SeqCreated)//если загадывает сервер
             {
                 Console.Write(Phrases.Request);
                 string? seq = Console.ReadLine();
@@ -84,7 +84,7 @@ class Server
                 if (opponentResult == Signal.GotItRight)
                 {
                     Console.WriteLine(Phrases.RightType);
-                    isCreatingSequence = false;
+                    SeqCreated = false;
                 }
             }
             else//загадывают с клиента
@@ -123,7 +123,7 @@ class Server
                 messageJson = JsonSerializer.Serialize(message);
                 Helpers.WriteToBuffer(messageJson, buffer);
                 await stream.WriteAsync(buffer, 0, buffer.Length);
-                isCreatingSequence = true;
+                SeqCreated = true;
             }
         }
     }

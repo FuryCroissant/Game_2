@@ -62,11 +62,11 @@ class Client
         byte[] buffer = new byte[1024];
 
         bool continueGame = true;
-        bool isCreatingSequence = false;
+        bool SeqCreated = false;
 
         while (continueGame)
         {
-            if (isCreatingSequence)//загадывает клиент
+            if (SeqCreated)//загадывает клиент
             {
                 Console.Write(Phrases.Request);
                 string? seq = Console.ReadLine();
@@ -100,7 +100,7 @@ class Client
                 if (opponentResult == Signal.GotItRight)//клиент проиграл
                 {
                     Console.WriteLine(Phrases.RightType);
-                    isCreatingSequence = false;
+                    SeqCreated = false;
                 }
             }
             else//загадывает сервер
@@ -138,7 +138,7 @@ class Client
                 messageJson = JsonSerializer.Serialize(message);
                 Helpers.WriteToBuffer(messageJson, buffer);
                 await stream.WriteAsync(buffer, 0, buffer.Length);
-                isCreatingSequence = true;
+                SeqCreated = true;
             }
         }
     }
