@@ -9,4 +9,3 @@ C:\Users\maria\source\repos\NewRepo2\l2\Lib\obj\Debug\net6.0\Lib.csproj.CoreComp
 C:\Users\maria\source\repos\NewRepo2\l2\Lib\obj\Debug\net6.0\Lib.dll
 C:\Users\maria\source\repos\NewRepo2\l2\Lib\obj\Debug\net6.0\ref\Lib.dll
 C:\Users\maria\source\repos\NewRepo2\l2\Lib\obj\Debug\net6.0\Lib.pdb
-C:\Users\maria\source\repos\NewRepo2\L2\Lib\obj\Debug\net6.0\Lib.csproj.AssemblyReference.cache

@@ -68,12 +68,12 @@ class Client
         {
             if (isCreatingSequence)//загадывает клиент
             {
-                Console.Write(ConstantValues.Request);
+                Console.Write(Phrases.Request);
                 string? seq = Console.ReadLine();
-                if (seq == null || seq.Length != ConstantValues.SeqLength ||
-                    seq.Any(color => !ConstantValues.AvailableColors.Contains(char.ToLower(color))))
+                if (seq == null || seq.Length != Phrases.SeqLength ||
+                    seq.Any(color => !Phrases.Colors.Contains(char.ToLower(color))))
                 {
-                    Console.WriteLine(ConstantValues.Rewrite);
+                    Console.WriteLine(Phrases.Rewrite);
                     continue;
                 }
                 //отправка с клиента
@@ -82,7 +82,7 @@ class Client
                 Helpers.WriteToBuffer(messageJson, buffer);
                 await stream.WriteAsync(buffer, 0, buffer.Length);
                 //получение ответа с сервера
-                Console.WriteLine(ConstantValues.WaitResult);
+                Console.WriteLine(Phrases.WaitResult);
                 await stream.ReadAsync(buffer, 0, buffer.Length);
                 messageJson = Helpers.ReadFromBuffer(buffer);
                 Signal? opponentResult = JsonSerializer.Deserialize<Message>(messageJson)?.Signal;
@@ -92,20 +92,20 @@ class Client
 
                 if (opponentResult == Signal.Lost)//клиент выиграл
                 {
-                    Console.WriteLine(ConstantValues.Victory);
+                    Console.WriteLine(Phrases.Victory);
                     continueGame = false;
                     continue;
                 }
 
                 if (opponentResult == Signal.GotItRight)//клиент проиграл
                 {
-                    Console.WriteLine(ConstantValues.RightType);
+                    Console.WriteLine(Phrases.RightType);
                     isCreatingSequence = false;
                 }
             }
             else//загадывает сервер
             {
-                Console.WriteLine(ConstantValues.WaitSequence);
+                Console.WriteLine(Phrases.WaitSequence);
                 //получеие с сервера
                 await stream.ReadAsync(buffer, 0, buffer.Length);
                 string messageJson = Helpers.ReadFromBuffer(buffer);
@@ -114,17 +114,17 @@ class Client
                 if (sequence == null)
                     throw new JsonException();
 
-                Console.WriteLine($"Memorize this seq ({ConstantValues.MemorizeTime} seconds!): {sequence}");
-                Thread.Sleep(ConstantValues.MemorizeTime * 1000);
+                Console.WriteLine($"Memorize this seq ({Phrases.MemorizeTime} seconds!): {sequence}");
+                Thread.Sleep(Phrases.MemorizeTime * 1000);
 
                 Console.Clear();
-                Console.Write(ConstantValues.RememberType);
+                Console.Write(Phrases.RememberType);
                 string? recreatedSequence = Console.ReadLine();
                 Message message;
 
                 if (recreatedSequence == null || recreatedSequence.ToLower() != sequence)//проигрыш
                 {
-                    Console.WriteLine(ConstantValues.Defeat);
+                    Console.WriteLine(Phrases.Defeat);
                     message = new() { Signal = Signal.Lost };
                     messageJson = JsonSerializer.Serialize(message);
                     Helpers.WriteToBuffer(messageJson, buffer);
@@ -133,7 +133,7 @@ class Client
                     continue;
                 }
 
-                Console.WriteLine(ConstantValues.RightType);//выигрыш, отправка ответа, смена ролей
+                Console.WriteLine(Phrases.RightType);//выигрыш, отправка ответа, смена ролей
                 message = new() { Signal = Signal.GotItRight };
                 messageJson = JsonSerializer.Serialize(message);
                 Helpers.WriteToBuffer(messageJson, buffer);
